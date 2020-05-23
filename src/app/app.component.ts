@@ -7,8 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
-  content = 'like a charm!'
-
-
-  
+  content = 'like a charm!';
 }
