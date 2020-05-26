@@ -31,5 +31,25 @@
     </ng-container>
   </div>
 
-  <app-inner *ngFor="let i of [1,2,3,4]"></app-inner>
+  <div *ngFor="let day of days">
+    <span [ngSwitch]="day">
+      <ng-container *ngSwitchCase="'poniedziałek'">
+        praca
+      </ng-container>
+      <ng-container *ngSwitchCase="'wtorek'">
+        picie
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        zamulanie
+      </ng-container>
+    </span>
+  </div>
+
+  <div>Data Binding</div>
+  <div>
+    <h3>Angular property binding</h3>
+    <img src="" alt="fotografia">
+    <input type="text">
+    <button>Dodaj</button>
+  </div>
 </div>
