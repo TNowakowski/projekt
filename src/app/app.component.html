@@ -47,9 +47,9 @@
 
   <div>Data Binding</div>
   <div>
-    <h3>Angular property binding</h3>
-    <img src="" alt="fotografia">
-    <input type="text">
-    <button>Dodaj</button>
+    <h3 [className]="colorClass">Angular property binding</h3>
+    <img [src]="logoUrl" alt="fotografia">
+    <input [maxLength]="maxLength" [value]="inputText" type="text">
+    <button [disabled]="isDisabled" (click)="change()">Dodaj</button>
   </div>
 </div>
