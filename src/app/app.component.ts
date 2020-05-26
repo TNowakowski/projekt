@@ -10,7 +10,11 @@ export class AppComponent {
   pi = Math.PI;
   date = new Date();
   dog: string;
+  dogs = new Array<Dog>();
 
+  constructor() {
+    this.dogs.push(new Dog('szmak', 2), new Dog('killwater', 6), new Dog('ies', 200));
+  }
 
   showDog() {
     const dog = new Dog('Andrzej', 2);

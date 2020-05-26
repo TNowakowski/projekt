@@ -4,9 +4,32 @@
   </h1>
   <p>
     Welcome on test page {{title | uppercase}} <br>
-    The pi number is: {{pi}} <br>
+    The pi number is: {{pi | number}} <br>
     Today is: {{date}}<br>
     My dog is: {{showDog()}}<br>
     And He has: 4 <br>
   </p>
+
+  <div>Dogs list</div>
+  <div *ngIf="dogs.length > 0; then areDogs; else noDogs "></div>
+
+  <ng-template class="list" #areDogs>
+    <ul>
+      <li *ngFor="let dog of dogs; let i = index">
+        {{i}} {{dog.name}} {{dog.age}}
+      </li>
+    </ul>
+  </ng-template>
+
+  <ng-template #noDogs>
+    <p>false</p>
+  </ng-template>
+
+  <div class="list without css">
+    <ng-container *ngFor="let dog of dogs; let i = index">
+      {{i}} {{dog.name}} {{dog.age}}
+    </ng-container>
+  </div>
+
+  <app-inner *ngFor="let i of [1,2,3,4]"></app-inner>
 </div>
