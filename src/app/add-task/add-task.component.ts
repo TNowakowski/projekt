@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-add-task',
@@ -10,6 +10,8 @@ export class AddTaskComponent {
   @Output()
   emitNewTask = new EventEmitter<string>();
 
+  @ViewChild('inputText')
+  input: ElementRef;
 
   task: string;
 
@@ -18,8 +20,8 @@ export class AddTaskComponent {
     this.task = '';
   }
 
-  show(et: HTMLInputElement) {
-    console.log(et);
+  show() {
+    console.log(this.input);
   }
 
   constructor() { }

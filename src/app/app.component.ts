@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { TasksCounterComponent } from './tasks-counter/tasks-counter.component';
+import { ToDoTasksComponent } from './to-do-tasks/to-do-tasks.component';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  @ViewChild('counter')
+  counterComponent: TasksCounterComponent;
+
+  @ViewChild('toDoTasks')
+  todoComponent: ToDoTasksComponent;
 
   task: string;
   tasksToDo = new Array<string>();
@@ -22,5 +30,8 @@ export class AppComponent {
   done(task: string) {
     this.tasksDone.push(task);
     this.remove(task);
+  }
+
+  constructor() {
   }
 }
