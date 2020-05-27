@@ -18,8 +18,8 @@ export class AddTaskComponent {
     this.task = '';
   }
 
-  show(e) {
-    console.log(e);
+  show(et: HTMLInputElement) {
+    console.log(et);
   }
 
   constructor() { }
