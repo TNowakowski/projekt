@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { ToDoTasksComponent } from './to-do-tasks/to-do-tasks.component';
 import { DoneTasksComponent } from './done-tasks/done-tasks.component';
 import { AddTaskComponent } from './add-task/add-task.component';
+import { TasksCounterComponent } from './tasks-counter/tasks-counter.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { AddTaskComponent } from './add-task/add-task.component';
     ToDoTasksComponent,
     DoneTasksComponent,
     AddTaskComponent,
+    TasksCounterComponent,
   ],
   imports: [
     BrowserModule,

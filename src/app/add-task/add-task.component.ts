@@ -18,6 +18,10 @@ export class AddTaskComponent {
     this.task = '';
   }
 
+  show(e) {
+    console.log(e);
+  }
+
   constructor() { }
 
 
