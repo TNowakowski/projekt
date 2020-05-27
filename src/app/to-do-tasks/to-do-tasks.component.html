@@ -5,7 +5,7 @@
       <li *ngFor="let task of tasks; let odd = odd; let even = even; let last = last"
         [ngClass]="{'li-odd': odd,'li-even': even, 'li-last': last && tasks.length === 1}">
         {{task}}
-        <button (click)="remove(task)">Usuń</button>
+        <button class="btn bg-danger" (click)="remove(task)">Usuń</button>
         <button (click)="done(task)">Gotowe</button>
       </li>
     </ul>
