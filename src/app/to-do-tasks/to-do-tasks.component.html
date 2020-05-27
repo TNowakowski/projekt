@@ -1,0 +1,12 @@
+<div class="header">
+  <h1>Lista zadań</h1>
+  <ng-container>
+    <ul>
+      <li *ngFor="let task of tasks">
+        {{task}}
+        <button (click)="remove(task)">Usuń</button>
+        <button (click)="done(task)">Gotowe</button>
+      </li>
+    </ul>
+  </ng-container>
+</div>

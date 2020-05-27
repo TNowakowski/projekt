@@ -11,11 +11,8 @@ export class AppComponent {
   tasksToDo = new Array<string>();
   tasksDone = new Array<string>();
 
-  addTask() {
-    if (this.task !== undefined && this.task.trim() !== '') {
-      this.tasksToDo.push(this.task);
-    }
-    this.task = '';
+  addTask(task: string) {
+    this.tasksToDo.push(task);
   }
 
   remove(task: string) {

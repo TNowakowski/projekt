@@ -1,41 +1,22 @@
 <div class="header">
+  <h1>Zadania do wykonania</h1>
 
-  <h1>Licznik zadań</h1>
-
-  <ng-container *ngIf="tasksToDo.length > 0; else noTasks">
-    <h2>Zadania do wykonania {{tasksToDo.length}}</h2>
-  </ng-container>
-
-  <ng-template #noTasks>
-    <h2>Nie masz więcej zadań. Masz czas wolny!</h2>
-  </ng-template>
-
-  <input [(ngModel)]="task" type="text">
-  <button (click)="addTask()">Dodaj</button>
-
+  <app-add-task (emitNewTask)="addTask($event)"></app-add-task>
 </div>
 
 <div style="display: flex;">
 
-  <div class="zadania1">
-    <h3>zadania do wykonania</h3>
-    <div *ngFor="let task of tasksToDo; let i = index">
-      <p>
-        {{i}} {{task}}
-      </p>
-      <button (click)="remove(task)">Usuń</button>
-      <button (click)="done(task)">Zrobiono</button>
-    </div>
-  </div>
+  <ng-container *ngIf="tasksToDo.length > 0; else noTasks">
+    <app-to-do-tasks (add)="done($event)" (rmv)="remove($event)" [tasks]="tasksToDo"></app-to-do-tasks>
+    <app-done-tasks style="padding-left: 5rem;" [tasks]="tasksDone"></app-done-tasks>
+  </ng-container>
 
-  <div style="padding-left: 2rem;" class="zadania2">
-    <h3>zadania wykonane</h3>
-    <div *ngFor="let task of tasksDone; let i = index">
-      <p>
-        {{i}} {{task}}
-      </p>
-      <button>Usuń</button>
+  <ng-template #noTasks>
+    <div>
+      <h3>
+        Nie masz więcej zadanek do wykonania!
+      </h3>
     </div>
-  </div>
+  </ng-template>
 
 </div>

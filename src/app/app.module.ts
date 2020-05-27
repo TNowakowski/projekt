@@ -3,14 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InnerComponent } from './inner/inner.component';
 import { FormsModule } from '@angular/forms';
+import { ToDoTasksComponent } from './to-do-tasks/to-do-tasks.component';
+import { DoneTasksComponent } from './done-tasks/done-tasks.component';
+import { AddTaskComponent } from './add-task/add-task.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    InnerComponent
+    ToDoTasksComponent,
+    DoneTasksComponent,
+    AddTaskComponent,
   ],
   imports: [
     BrowserModule,
