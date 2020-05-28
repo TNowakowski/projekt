@@ -1,19 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
-import { TasksCounterComponent } from './tasks-counter/tasks-counter.component';
-import { ToDoTasksComponent } from './to-do-tasks/to-do-tasks.component';
-
+import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
-  @ViewChild('counter')
-  counterComponent: TasksCounterComponent;
-
-  @ViewChild('toDoTasks')
-  todoComponent: ToDoTasksComponent;
 
   task: string;
   tasksToDo = new Array<string>();
