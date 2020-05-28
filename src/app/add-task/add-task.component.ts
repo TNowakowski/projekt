@@ -20,10 +20,6 @@ export class AddTaskComponent {
     this.task = '';
   }
 
-  show() {
-    console.log(this.input);
-  }
-
   constructor() { }
 
 
