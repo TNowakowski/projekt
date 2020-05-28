@@ -24,6 +24,7 @@ export class TaskService {
 
   addTask(task: Task) {
     this.tasksToDo.push(task);
+    this.tasksToDo = this.tasksToDo.slice();
     this.taskListObs.next(this.tasksToDo);
   }
 
@@ -33,6 +34,7 @@ export class TaskService {
   }
 
   done(task: Task) {
+    task.end = new Date();
     this.tasksDone.push(task);
     this.remove(task);
     this.taskDoneObs.next(this.tasksDone);

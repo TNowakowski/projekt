@@ -24,7 +24,4 @@ export class ToDoTasksComponent {
   done(task: Task) {
     this.tasksService.done(task);
   }
-
-
-
 }

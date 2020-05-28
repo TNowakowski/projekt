@@ -2,9 +2,8 @@
   <h1>Wykonane Zadania</h1>
   <ng-container>
     <ul>
-      <li *ngFor="let task of tasks">
+      <li appChecked [date]="task.end | date" appDate *ngFor="let task of tasks">
         {{task.name}}
-        {{task.created | date}}
       </li>
     </ul>
   </ng-container>

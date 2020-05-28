@@ -2,10 +2,10 @@
   <h1>Lista zadań</h1>
   <ng-container>
     <ul>
-      <li *ngFor="let task of tasks; let odd = odd; let even = even; let last = last"
+      <li appDate [date]="task.created | date"
+        *ngFor="let task of tasks | sortName; let odd = odd; let even = even; let last = last"
         [ngClass]="{'li-odd': odd,'li-even': even, 'li-last': last && tasks.length === 1}">
-        {{task.name}}
-        {{task.created | date}}
+        {{task.name | transformTask: ' NOW!' }}
         <button class="btn bg-danger" (click)="remove(task)">Usuń</button>
         <button (click)="done(task)">Gotowe</button>
       </li>

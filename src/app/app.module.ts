@@ -7,7 +7,10 @@ import { ToDoTasksComponent } from './to-do-tasks/to-do-tasks.component';
 import { DoneTasksComponent } from './done-tasks/done-tasks.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { TasksCounterComponent } from './tasks-counter/tasks-counter.component';
-// import { TaskService } from './services/task-service';
+import { CheckedDirective } from './shared/checked.directive';
+import { DateDirective } from './shared/date.directive';
+import { TransformTaskPipe } from './shared/transform-task.pipe';
+import { SortNamePipe } from './shared/sort-name.pipe';
 
 
 @NgModule({
@@ -17,6 +20,10 @@ import { TasksCounterComponent } from './tasks-counter/tasks-counter.component';
     DoneTasksComponent,
     AddTaskComponent,
     TasksCounterComponent,
+    CheckedDirective,
+    DateDirective,
+    TransformTaskPipe,
+    SortNamePipe,
   ],
   imports: [
     BrowserModule,
