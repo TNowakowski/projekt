@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { TaskService } from './services/task-service';
+import { Task } from './models/task';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -6,23 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  task: string;
-  tasksToDo = new Array<string>();
-  tasksDone = new Array<string>();
+  toDoTasks: Array<Task>;
 
-  addTask(task: string) {
-    this.tasksToDo.push(task);
-  }
-
-  remove(task: string) {
-    this.tasksToDo = this.tasksToDo.filter(e => e !== task);
-  }
-
-  done(task: string) {
-    this.tasksDone.push(task);
-    this.remove(task);
-  }
-
-  constructor() {
+  constructor(private taskService: TaskService) {
+    this.taskService.getTasksListObs().subscribe((taskList: Array<Task>) => {
+      this.toDoTasks = taskList;
+    });
   }
 }

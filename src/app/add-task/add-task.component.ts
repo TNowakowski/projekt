@@ -1,4 +1,6 @@
-import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
+import { TaskService } from '../services/task-service';
+import { Task } from '../models/task';
 
 @Component({
   selector: 'app-add-task',
@@ -7,20 +9,14 @@ import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular
 })
 export class AddTaskComponent {
 
-  @Output()
-  emitNewTask = new EventEmitter<string>();
+  taskName: string;
 
-  @ViewChild('inputText')
-  input: ElementRef;
-
-  task: string;
-
-  addTask() {
-    this.emitNewTask.emit(this.task);
-    this.task = '';
+  constructor(private taskService: TaskService) {
   }
-
-  constructor() { }
-
+  addTask() {
+    const task: Task = { name: this.taskName, created: new Date() };
+    this.taskService.addTask(task);
+    this.taskName = '';
+  }
 
 }

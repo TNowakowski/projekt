@@ -1,20 +1,10 @@
 <div class="header">
   <h1>Zadania do wykonania</h1>
-  <app-add-task (emitNewTask)="addTask($event)"></app-add-task>
-  <app-tasks-counter [toDoTasks]="tasksToDo.length" [doneTasks]="tasksDone.length"></app-tasks-counter>
+  <app-add-task></app-add-task>
+  <app-tasks-counter></app-tasks-counter>
 </div>
 
 <div style="display: flex;">
-  <ng-container *ngIf="tasksToDo.length > 0; else noTasks">
-    <app-to-do-tasks (add)="done($event)" (rmv)="remove($event)" [tasks]="tasksToDo"></app-to-do-tasks>
-    <app-done-tasks style="padding-left: 5rem;" [tasks]="tasksDone"></app-done-tasks>
-  </ng-container>
-
-  <ng-template #noTasks>
-    <div>
-      <h3>
-        Nie masz więcej zadanek do wykonania!
-      </h3>
-    </div>
-  </ng-template>
+  <app-to-do-tasks></app-to-do-tasks>
+  <app-done-tasks style="padding-left: 5rem;"></app-done-tasks>
 </div>
