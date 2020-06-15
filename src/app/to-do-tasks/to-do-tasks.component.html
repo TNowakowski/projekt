@@ -2,7 +2,7 @@
   <h1>Lista zadań</h1>
   <ng-container>
     <ul>
-      <li appDate [date]="task.created | date"
+      <li appDate [date]="task.created"
         *ngFor="let task of tasks | sortName; let odd = odd; let even = even; let last = last"
         [ngClass]="{'li-odd': odd,'li-even': even, 'li-last': last && tasks.length === 1}">
         {{task.name | transformTask: ' NOW!' }}

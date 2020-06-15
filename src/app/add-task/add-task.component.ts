@@ -14,9 +14,8 @@ export class AddTaskComponent {
   constructor(private taskService: TaskService) {
   }
   addTask() {
-    const task: Task = { name: this.taskName, created: new Date() };
+    const task: Task = { name: this.taskName, created: new Date().toLocaleString(), isDone: false };
     this.taskService.addTask(task);
     this.taskName = '';
   }
-
 }

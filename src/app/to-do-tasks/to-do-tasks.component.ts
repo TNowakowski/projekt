@@ -13,7 +13,7 @@ export class ToDoTasksComponent {
 
   constructor(private tasksService: TaskService) {
     this.tasksService.getTasksListObs().subscribe((taskList: Array<Task>) => {
-      this.tasks = taskList;
+      this.tasks = taskList.filter(t => t.isDone === false);
     });
   }
 

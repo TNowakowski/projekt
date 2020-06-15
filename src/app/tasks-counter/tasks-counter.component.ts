@@ -14,11 +14,13 @@ export class TasksCounterComponent {
 
   constructor(private taskService: TaskService) {
     this.taskService.getTasksListObs().subscribe((taskList: Array<Task>) => {
-      this.toDoTasks = taskList.length;
+      const pendingTasks = taskList.filter(t => t.isDone === false);
+      this.toDoTasks = pendingTasks.length;
     });
 
-    this.taskService.getTasksDoneListObs().subscribe((doneTasksList: Array<Task>) => {
-      this.doneTasks = doneTasksList.length;
+    this.taskService.getTasksListObs().subscribe((doneTasksList: Array<Task>) => {
+      const finishedTasks = doneTasksList.filter(t => t.isDone === true);
+      this.doneTasks = finishedTasks.length;
     });
   }
 
